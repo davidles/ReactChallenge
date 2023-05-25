@@ -17,7 +17,7 @@ const countWords = (text: string): number => {
 const countPronouns = (text: string): number => {
   const wordArray = text.trim().split(/\s+/); 
 
-  const count = wordArray.filter((wordText) => pronouns.includes(wordText)).length;
+  const count = wordArray.filter((wordText) => pronouns.includes(wordText.replace(/\.{3}|\.{2}|\.$/, '').toLowerCase())).length;
   return count;
 };
 
