@@ -1,26 +1,41 @@
-import './index.scss'
+import './index.scss';
+import React from 'react';
+import {CountState} from '../../App';
 
-const ResultBox = () => {
+interface ResultBoxProps {
+  countState: CountState;
+}
+
+const ResultBox: React.FC<ResultBoxProps> = ({ countState }) => {
+
+  const {
+    words,
+    chars,
+    sentences,
+    paragraphs,
+    pron
+  } = countState
+
   const resultBar = [
     {
       title: 'Words',
-      value: 0,
+      value: words,
     },
     {
       title: 'Characters',
-      value: 0,
+      value: chars,
     },
     {
       title: 'Sentences',
-      value: 0,
+      value: sentences,
     },
     {
       title: 'Paragraphs ',
-      value: 0,
+      value: paragraphs,
     },
     {
       title: 'Pronouns',
-      value: 0,
+      value: pron,
     },
   ]
 
